@@ -1,0 +1,20 @@
+{
+  "id": 14,
+  "firstName": "Mario",
+  "lastName": "Rosi",
+  "active": true,
+  "address": {
+    "houseNumber": 5,
+    "street": "Golden road",
+    "area": "Kokuvil",
+    "city": "Jaffna",
+    "district": "Jaffna district",
+    "province": "Northern"
+  },
+  "languages": [
+    "Java",
+    "Python",
+    "HTML"
+  ],
+  "age": 23
+}
