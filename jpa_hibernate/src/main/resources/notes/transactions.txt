@@ -1,0 +1,52 @@
+Dirty Read
+------------
+
+Suppose we have 2 accounts `A` and `B`. We transfer 100$ from A to B. Usually this happens in 2 steps:
+1. Deduct 100$ from A
+2. Deposit 100$ to B
+
+Suppose we query both A and B after step 1. Now A will have 100$ deducted but B haven't received.
+So we are querying while in the middle of their execution -> i.e., while they are DIRTY
+This is called Dirty Read
+
+
+
+Non-Repeatable Read
+---------------------
+
+Consider following transaction:
+1. select * from subjects where id=100;
+2. update subjects set name='subject-updated' where id=100;
+3. select * from subjects where id=100;
+
+Now between 1st and 3rd query, the nature of result is different.
+That is, I cannot have a consistent result while some other operation executes parallel
+
+
+
+Phantom Read
+---------------------
+
+Consider following transaction:
+1. select * from persons where salary between 1000 and 5000;
+2. insert into persons(name, salary) value('someGuy', 3000)
+3. select * from persons where salary between 1000 and 5000;
+
+Now between 1st query and 3rd query the number of results vary, but already persisted data is consistent and new data is added.
+With this case, we cannot say for sure that the aggregate functions work properly.
+
+
+Different commit strategies used to mitigate these issues
+-------------------------------------------------------------------
+
+                        Dirty read          Non-repeatable read     Phantom read
+                        ----------          -------------------     -------------
+
+Read Uncommitted   |    Possible            Possible                Possible
+
+Read committed     |    Solved              Possible                Possible            --> Mostly used
+
+Repeatable read    |    Solved              Solved                  Possible
+
+Serializable       |    Solved              Solved                  Solved
+

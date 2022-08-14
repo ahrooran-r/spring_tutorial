@@ -1,0 +1,23 @@
+There are 2 types of caches
+
+1. First level cache
+        This is only works during a single transaction and ACTIVE by default
+        Within that transaction, if same query is fired again times, then hibernate will not generate 2 different calls,
+            it will retrieve the data from its cache
+
+2. Second level cache
+        This will work throughout the application. i.e., common for all transactions within the application
+        If 2 same queries are fired by 2 different transactions, then data is retrieved from 2nd level cache
+        But we have to configure this -> EhCache
+
+
+Transaction 1       Transaction 2       Transaction 3       Transaction 4
+
+Persistence         Persistence         Persistence         Persistence             First level cache
+Context 1           Context 2           Context 3           Context 4
+
+
+                    Second Level Cache
+
+
+                    Database
