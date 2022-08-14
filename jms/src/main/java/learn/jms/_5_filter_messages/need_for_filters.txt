@@ -1,0 +1,23 @@
+
+                    Queue
+                    ---->           Consumer App 1
+Sender App          ---->           Consumer App 2
+                    ---->           Consumer App 3
+
+What if consumer apps want to consume messages on a conditional basis?
+If the logic is built into each consumer, then it can only find that the message does not have certain property
+    only once the message is received from the queue
+But by that time, message would be removed from the queue and other consumers won't even receive that message!
+This is a weird situation!
+
+Therefore with filters, a consumer can ask JMS provider to only send the messages that have certain properties.
+It is the responsibility of sender to attach the properties so each message can be checked.
+
+Filters are like SQL queries, and can be only applied on message properties and certain headers
+Headers:    1. JMSDeliveryMode
+            2. JMSPriority
+            3. JMSMessageID
+            4. JMSCorrelationID
+            5. JMSType
+
+https://www.ibm.com/docs/en/ibm-mq/7.5?topic=messages-message-selectors

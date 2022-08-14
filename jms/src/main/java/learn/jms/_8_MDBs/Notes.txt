@@ -1,0 +1,6 @@
+EJB
+    1. Session Bean
+            1. State less
+            2. State full
+
+    2. MDB -> Asynchronous, Server can maintain a pool of MDBs

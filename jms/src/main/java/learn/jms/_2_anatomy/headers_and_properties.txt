@@ -1,0 +1,20 @@
+Headers:
+
+    Provider:
+        1. JMSDestination       ->  Queue or Topic to which message will be delivered
+        2. JMSDeliveryMode      ->  Persistent message or Non-persistent message
+        3. JMSMessageId         ->  Unique ID assigned by JMSProvider so consumer can identify each message
+        4. JMSTimestamp         ->  Time when JMSProvider receives a message
+        5. JMSExpiration        ->  Time to live for a message
+        6. JMSRedelivered       ->  Only set when message is redelivered and set by JMSProvider
+        7. JMSPriority          ->  0-9 => 0-4 Normal priority; 5-9 High priority; 4 Default priority
+
+    Developer:
+        1. JMSReplyTo           ->  Sender application set this so consumer application knows which queue to send reply back on
+        2. JMSCorrelationId     ->  Consumer application takes JMSMessageId and put it in JMSCorrelationID field when sending reply/response
+        2. JMSType              ->  Type of message being sent
+
+Properties:
+
+    1. setXXXProperty
+    2. getXXXProperty

@@ -1,0 +1,7 @@
+Message:
+
+    1. TextMessage
+    2. ObjectMessage
+    3. MapMessage
+    4. ByteMessage
+    5. StreamMessage        ->  consumer should read in exact same order

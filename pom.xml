@@ -30,6 +30,7 @@
         <module>springframework/springboot</module>
         <module>springframework/springbootrest</module>
         <module>springboot_rest</module>
+        <module>jms</module>
     </modules>
 
     <properties>
