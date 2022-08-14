@@ -1,0 +1,17 @@
+Important files to look:
+
+    1. Played.class
+    2. PlayedId.class
+
+    3. Accident.class
+
+    4. Customer.class
+    5. Address.class
+    6. Street.class
+
+    9. Department.class
+
+    10. Section.class *
+    11. SectionId.class
+
+    xx. data.sql
