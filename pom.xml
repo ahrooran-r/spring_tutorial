@@ -31,6 +31,7 @@
         <module>springframework/springbootrest</module>
         <module>springboot_rest</module>
         <module>jms</module>
+        <module>spring-petclinic</module>
     </modules>
 
     <properties>
@@ -39,6 +40,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
     <dependencies>
